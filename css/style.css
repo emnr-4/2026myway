@@ -247,6 +247,10 @@ body{
     color: #FF5824;
     margin-bottom: 8px;
 }
+.point_txt .event_btn,
+.s2event_btn .event_btn{
+    margin-top: 32px;
+}
 .event_btn{
     display: inline-block;
     background-color: #FF5824;
@@ -254,7 +258,7 @@ body{
     border-radius: 6px;
     box-sizing: border-box;
     padding: 12px 24px;
-    margin-top: 32px;
+    /* margin-top: 32px; */
 }
 .event_btn a{
     text-decoration: none;
