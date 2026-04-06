@@ -63,7 +63,7 @@ body{
     z-index: 100;
 }
 .sp_logo img{
-    height: 50px;
+    height: 45px;
 }
 .drawer_hidden{
     display: none;
@@ -424,6 +424,7 @@ td.fc-day-mon{
 }
 .section4 .txt{
     font-size: 1.5rem;
+    margin-bottom: 16px;
 }
 .section4 h3{
     margin-block: 32px 16px;
@@ -559,8 +560,9 @@ small{
         padding-block: 80px;
     }
     .pc_footer{
-        width: 1040px;
-        margin: 0 auto;
+        /* width: 1040px;
+        margin: 0 auto; */
+        padding: 24px 150px 12px;
     }
 
 }
