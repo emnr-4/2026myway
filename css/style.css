@@ -1,0 +1,566 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    letter-spacing: 0.1rem;
+}
+body{
+    background-color: #404040;
+}
+.sp{
+    display: block;
+}
+.pc{
+    display: none;
+}
+/* フォント */
+.abhaya-libre-regular {
+    font-family: "Abhaya Libre", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.noto-sans-jp-uniquifier {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.zen-old-mincho-regular {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.zen-old-mincho-semibold {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.alex-brush-regular {
+  font-family: "Alex Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.txt{
+    font-family: Noto Sans JP;
+    letter-spacing: 0.08rem;
+    line-height: 160%;
+    color: #fff;
+}
+/* sp表記///////////////////////////////////// */
+.sp_header{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 20px;
+    background-color: rgba(64, 64, 64, 0.5);
+    position: fixed;
+    z-index: 100;
+}
+.sp_logo img{
+    height: 50px;
+}
+.drawer_hidden{
+    display: none;
+}
+.drawer_open{
+    display: flex;
+    height: 100px;
+    width: 70px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+}
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 35px;
+    border-radius: 3px;
+    background: white;
+    transition: 0.5s;
+    position: absolute;
+}
+.drawer_open span:before{
+    bottom: 12px;
+}
+.drawer_open span:after{
+    top: 12px;
+}
+#drawer_input:checked ~ .drawer_open span{
+    background: rgba(255, 255, 255, 0);
+}
+#drawer_input:checked ~ .drawer_open span::before{
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#drawer_input:checked ~ .drawer_open span::after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+.nav_content{
+    width: 80%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 99;
+    background: #727272;
+    transition: .5s;
+    border-radius: 10px 0 0 0;
+}
+.nav_list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+.nav_list li{
+    padding: 20px;
+}
+.nav_list li a{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-family: "Zen Old Mincho";
+    font-size: 1.6rem;
+    transition: .3s;
+}
+.hum2{
+    background-color: #B7B7B7;
+    border-radius: 0 0 0 10px;
+}
+.hum2 ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+.hum2 ul li{
+    color: white;
+    padding: 10px;
+    list-style: none;
+    font-size: 1.4rem;
+}
+.hum_phon a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.nav_list a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    left: 50%;
+    bottom: 0;
+    transition: .3s;
+    background-color: #FF5824;
+    transform: translate(-50%);
+}
+.nav_list a:hover::after{
+    width: 100%;
+}
+#drawer_input:checked ~ .nav_content{
+    left: 20%;
+    box-shadow: 2px 2px 3px 0 #404040;
+}
+.phon_icon{
+    margin-left: auto;
+}
+.fot_lust{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+.fot_ilust{
+    width: 40%;
+}
+/* section1///////////////// */
+.section1{
+    padding:96px 20px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+.section1 img{
+    display: block;
+    width: 100%;
+    margin-bottom: 32px;
+}
+.photo_bg{
+    background-image: url(../images/myway.jpg);
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.photo_bg::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(rgba(255,255,255,0)0,#404040 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.logo_white{
+    position: absolute;
+    top: 240px;
+    width: 100%;
+}
+.logo_white img{
+    display: block;
+    margin: 0 auto;
+}
+.section1 h2,
+.section4 h3{
+    font-family: "Zen Old Mincho";
+    font-size: 2.0rem;
+    color: white;
+    margin-bottom: 16px;
+}
+.section1 .txt{
+    font-size: 1.5rem;
+}
+.point h3{
+    font-family: "Alex Brush";
+    font-size: 4.0rem;
+    color: #FF5824;
+    margin-bottom: 8px;
+}
+.event_btn{
+    display: inline-block;
+    background-color: #FF5824;
+    text-align: center;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    margin-top: 32px;
+}
+.event_btn a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.6rem;
+}
+.slider img{
+    max-width: 400px;
+    width: 100%;
+}
+.slick-slide {
+  margin: 0 4px;
+}
+
+/* section2////////////////// */
+.section2{
+    background-color: #727272;
+    margin-top: 64px;
+    padding-block: 64px;
+}
+.section_title{
+    margin-bottom: 56px;
+}
+.sub-title{
+    font-size: 1.6rem;
+    font-family: "Abhaya Libre";
+    color: #B7B7B7;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+.title{
+    font-size: 2.4rem;
+    font-family: "Zen Old Mincho";
+    color: white;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+.calender{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    max-width: 1000px;
+    min-width: 350px;
+    margin: 0 auto;
+}
+#calendar{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.fc-header-toolbar,
+.fc-view-harness,
+.fc-col-header, .fc-daygrid-body, .fc-scrollgrid-sync-table{
+	width: 93%;
+	max-width: 1000px;
+}
+th.fc-day-sun,
+th.fc-day-mon,
+th.fc-day-tue,
+th.fc-day-wed,
+th.fc-day-thu,
+th.fc-day-fri,
+th.fc-day-sat
+ { 
+    background-color: #2C3E50;
+    /* opacity: 0.8; */
+}
+td.fc-day-sun,
+td.fc-day-mon{
+    background-color: #2C3E50;
+    opacity: 0.5;
+}
+
+.calendar_vac{
+    color: white;
+    padding-top: 10px;
+    width: 93%;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+.calendar_vac::before{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #2C3E50;
+    opacity: 0.5;
+    transform: translateY(8px);
+    margin-right: 5px;
+}
+.calender_phon{
+    background-color: #FF5824;
+    width: 300px;
+    line-height: 3;
+    text-align: center;
+    border-radius: 10px;
+    margin: 40px auto 0;
+    box-shadow: 2px 2px 2px #404040;
+}
+.calender_phon a{
+    text-decoration: none;
+    color: white;
+}
+.calender_text{
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.section2 .event_btn{
+    width: auto;
+    display: inline-block;
+}
+.s2event_btn{
+    text-align: center;
+}
+/* section3 ///////////////*/
+.section3{
+    background-color: #727272;
+    padding: 64px 20px;
+}
+.section3 img{
+    display: block;
+    width: 100%;
+    max-width: 500px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+}
+.info_txt{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid white;
+    padding-block: 24px;
+}
+.info_txt h2{
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: "Noto Sans JP";
+    color: white;
+}
+.info_txt .txt{
+    font-size: 1.6rem;
+}
+.info_txt a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #FF5824;
+    padding-right: 4px;
+}
+.map_link{
+    display: flex;
+    align-items: center;
+}
+/* section4 /////////////*/
+.section4{
+    padding: 80px 20px 56px;
+}
+.master_mama img{
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.section4 .txt{
+    font-size: 1.5rem;
+}
+.section4 h3{
+    margin-block: 32px 16px;
+}
+.section4 h3 span{
+    color: #FF5824;
+}
+.s4_illust img{
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin-right: 0;
+    margin-left: auto;
+}
+/* footer ////////// */
+footer{
+    background-color: #727272;
+    padding: 24px 20px 16px;
+}
+.footer_flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.footer_img img{
+    display: block;
+    width: 100%;
+    max-width: 130px;
+}
+.footer_ico img{
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+small{
+    font-size: 1.2rem;
+    color: #B7B7B7;
+}
+
+/* pc表記///////////////////////////////////// */
+@media screen and (min-width:1040px){
+    .sp{
+        display: none;
+    }
+    .pc{
+        display: block;
+    }
+    h1 img{
+        display: block;
+        height: 45px;
+    }
+    .pc_header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 150px;
+        background-color: rgba(64, 64, 64, 0.5);
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .pc_h_content{
+        display: flex;
+        align-items: center;
+    }
+    .number{
+        margin-right: 32px;
+    }
+    .number p:nth-child(1){
+        font-size: 1.4rem;
+    }
+    .number p:nth-child(2){
+        font-size: 2.6rem;
+    }
+    /* section1///////////////// */
+    .section1{
+        max-width: 1040px;
+        margin: 200px auto;
+        gap: 88px;
+    }
+    .section1 h2{
+        font-size: 2.4rem;
+    }
+    .logo_white img{
+        display: block;
+        width: 550px;
+        margin: 0 auto;
+    }
+    .section1 img{
+        display: block;
+        max-width: 600px;
+        width: 100%;
+        margin-bottom: 32px;
+    }
+    .pc_flex{
+        display: flex;
+        align-items: center;
+        gap: 64px;
+    }
+    .point_txt{
+        width: 50%;
+    }
+    .point_txt h3{
+        margin-bottom: 32px;
+    }
+    .point img{
+    margin-bottom: 0px;
+    }
+    .slider img{
+        max-width: 400px;
+        width: 100%;
+    }
+    .slick-slide {
+        margin: 0 4px;
+    }
+    .slick-slide {
+        margin: 0 12px;
+    }
+    /* section3/////////////// */
+    .section3 .pc_flex{
+        justify-content: center;
+        align-items: start;
+    }
+    .section3 .pc_flex,
+    .section4 .pc_flex{
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+    /* footer /////////////// */
+    .section4{
+        padding-block: 80px;
+    }
+    .pc_footer{
+        width: 1040px;
+        margin: 0 auto;
+    }
+
+}
