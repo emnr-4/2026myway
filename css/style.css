@@ -554,10 +554,12 @@ small{
     .section4 h3{
         font-size: 2.4rem;
     }
+    .logo_white{
+        max-width: 750px;
+    }
     .logo_white img{
         display: block;
         width: 100%;
-        max-width: 750px;
         margin: 0 auto;
     }
     /* スクロールダウン */
