@@ -6,6 +6,7 @@
 html{
     font-size: 62.5%;
     letter-spacing: 0.1rem;
+    scroll-behavior: smooth;
 }
 body{
     background-color: #404040;
@@ -45,9 +46,10 @@ body{
 }
 .txt{
     font-family: Noto Sans JP;
-    letter-spacing: 0.08rem;
-    line-height: 160%;
+    letter-spacing: 10%;
+    line-height: 170%;
     color: #fff;
+    font-weight: 300;
 }
 /* sp表記///////////////////////////////////// */
 .sp_header{
@@ -58,7 +60,7 @@ body{
     width: 100%;
     box-sizing: border-box;
     padding-left: 20px;
-    background-color: rgba(64, 64, 64, 0.5);
+    background-color: rgba(64, 64, 64, 0.6);
     position: fixed;
     z-index: 100;
 }
@@ -191,7 +193,7 @@ body{
 }
 /* section1///////////////// */
 .section1{
-    padding:96px 20px 80px;
+    padding:80px 20px 120px;
     display: flex;
     flex-direction: column;
     gap: 56px;
@@ -204,7 +206,7 @@ body{
 .photo_bg{
     background-image: url(../images/myway.jpg);
     width: 100%;
-    height: 600px;
+    height: 700px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -215,11 +217,11 @@ body{
 .photo_bg::before{
     content: "";
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: block;
     background: linear-gradient(rgba(255,255,255,0)0,#404040 100%);
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
 }
 .logo_white{
@@ -237,6 +239,7 @@ body{
     font-size: 2.0rem;
     color: white;
     margin-bottom: 16px;
+    font-weight: 400;
 }
 .section1 .txt{
     font-size: 1.5rem;
@@ -258,7 +261,6 @@ body{
     border-radius: 6px;
     box-sizing: border-box;
     padding: 12px 24px;
-    /* margin-top: 32px; */
 }
 .event_btn a{
     text-decoration: none;
@@ -295,6 +297,10 @@ body{
     color: white;
     text-align: center;
     letter-spacing: 0.1rem;
+    font-weight: 500;
+}
+.sub-title{
+    font-size: 1.8rem;
 }
 .calender{
     display: flex;
@@ -332,23 +338,25 @@ td.fc-day-mon{
     opacity: 0.5;
 }
 
-.calendar_vac{
-    color: white;
-    padding-top: 10px;
-    width: 93%;
-    margin: 0 auto;
+.miniBox_vac{
+    display: flex;
+    align-items: center;
+    gap: 12px;
     max-width: 1000px;
+    margin: 12px auto;
+    padding-inline: 16px;
 }
-.calendar_vac::before{
-    content: "";
-    display: inline-block;
+.miniBox{
     width: 24px;
     height: 24px;
     background-color: #2C3E50;
     opacity: 0.5;
-    transform: translateY(8px);
-    margin-right: 5px;
 }
+.miniBox_vac p{
+    font-size: 1.4rem;
+    color: white;
+}
+
 .calender_phon{
     background-color: #FF5824;
     width: 300px;
@@ -393,18 +401,18 @@ td.fc-day-mon{
 .info_txt{
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    border-bottom: 1px solid white;
-    padding-block: 24px;
+    gap: 4px;
+    border-bottom: 1px solid #B7B7B7;
+    padding-block: 26px;
 }
 .info_txt h2{
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 400;
     font-family: "Noto Sans JP";
     color: white;
 }
 .info_txt .txt{
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 .info_txt a{
     text-decoration: none;
@@ -445,12 +453,12 @@ td.fc-day-mon{
 }
 /* footer ////////// */
 footer{
-    background-color: #727272;
+    border-block-start: 1px solid #B7B7B7;
     padding: 24px 20px 16px;
 }
 .footer_flex{
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: space-between;
     margin-bottom: 24px;
 }
@@ -477,20 +485,40 @@ small{
     .pc{
         display: block;
     }
+    .title{
+        font-size: 3.0rem;
+    }
     h1 img{
         display: block;
         height: 45px;
     }
-    .pc_header{
+    /* .pc_header{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 150px;
-        background-color: rgba(64, 64, 64, 0.5);
+        padding: 16px 150px;
+        background-color: rgba(64, 64, 64, 0.3);
         position: fixed;
         z-index: 100;
         width: 100%;
         box-sizing: border-box;
+    } */
+    .pc_header{
+        background-color: rgba(64, 64, 64, 0.3);
+        width: 100%;
+        height: 94px;
+        position: fixed;
+        z-index: 100;
+    }
+    .pc_header_content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1500px;
+        box-sizing: border-box;
+        padding: 16px 40px;
+        margin: 0 auto;
     }
     .pc_h_content{
         display: flex;
@@ -499,26 +527,85 @@ small{
     .number{
         margin-right: 32px;
     }
+    .number_txt{
+        color: white;
+        font-family: "Noto Sans JP";
+        font-weight: 400;
+
+    }
     .number p:nth-child(1){
         font-size: 1.4rem;
     }
     .number p:nth-child(2){
-        font-size: 2.6rem;
+        font-size: 2.9rem;
+    }
+    .photo_bg{
+        height: 100dvh;
     }
     /* section1///////////////// */
     .section1{
-        max-width: 1040px;
-        margin: 200px auto;
+        max-width: 1312px;
+        margin: 0 auto;
         gap: 88px;
+        padding:200px 56px 200px;
     }
-    .section1 h2{
+    .section1 h2,
+    .section4 h3{
         font-size: 2.4rem;
     }
     .logo_white img{
         display: block;
-        width: 550px;
+        width: 100%;
+        max-width: 750px;
         margin: 0 auto;
     }
+    /* スクロールダウン */
+    .scrollDown{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 24px;
+        bottom: 0;
+        right: 40px;
+        opacity: 1;
+        transition: opacity 0.5s ease, visibility 0.5s;
+    }
+    .scrollDown.scrollDown.is-hidden{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .scrollDown p{
+        font-family: "Abhaya Libre";
+        font-size: 1.8rem;
+        writing-mode: vertical-lr;
+        color: #b7b7b7;
+    }
+    .scrolldown_line{
+        width: 1px;
+        height: 200px;
+        background-color: #B7B7B7;
+        animation: scroll_line 3s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+    }
+    @keyframes scroll_line {
+        0% {
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+        40% {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+        60% {
+            transform: scaleY(1);
+            transform-origin: bottom;
+        }
+        100% {
+            transform: scaleY(0);
+            transform-origin: bottom;
+        }
+    }
+
     .section1 img{
         display: block;
         max-width: 600px;
@@ -549,24 +636,89 @@ small{
     .slick-slide {
         margin: 0 12px;
     }
+    /* section2 ///////////////*/
+    .section2{
+        padding-block: 120px;
+    }
+
     /* section3/////////////// */
+    .section3{
+        padding: 88px 0 120px;
+    }
     .section3 .pc_flex{
         justify-content: center;
         align-items: start;
     }
     .section3 .pc_flex,
     .section4 .pc_flex{
-        max-width: 1040px;
+        max-width: 1312px;
         margin: 0 auto;
+        padding-inline: 56px;
     }
     /* footer /////////////// */
     .section4{
-        padding-block: 80px;
+        padding: 88px 0;
+        position: relative;
+    }
+    footer{
+        padding: 0;
     }
     .pc_footer{
-        /* width: 1040px;
-        margin: 0 auto; */
-        padding: 24px 150px 12px;
+        padding: 24px 40px;
+        width: 100%;
+        max-width: 1500px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .pc_footer_flex{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    /* ページトップ */
+    .pageTop{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-direction: column;
+        position: absolute;
+        bottom: 24px;
+        right: 40px;
+    }
+    .pageTop p a{ 
+        color: #B7B7B7;
+        font-family: "Abhaya Libre";
+        font-size: 1.8rem;
+        writing-mode: vertical-rl;
+        text-decoration: none;
+    }
+    .pagetop_line{
+        background-color: #B7B7B7;
+        width: 1px;
+        height: 200px;
+        animation: pagetop_line_anim 3s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+    }
+    @keyframes pagetop_line_anim {
+        0% {
+            transform: scaleY(0);
+            transform-origin: bottom;
+        }
+        40% {
+            transform: scaleY(1);
+            transform-origin: bottom;
+        }
+        60% {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+        100% {
+            transform: scaleY(0);
+            transform-origin: top;
+        }
     }
 
 }

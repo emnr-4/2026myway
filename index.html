@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="./css/style.css">
     <meta name="robots" content="noindex, nofollow">
 
+    <link rel="icon" type="image/png" href="./images/logo_favicon.svg">
+    <link rel="apple-touch-icon" href="./images/logo_favicon.svg">
+
     <!-- フォント ///////////-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,13 +73,15 @@
 </head>
 <body>
     <header class="pc_header pc">
-        <h1><a href="#"><img src="./images/logo.png" alt="ロゴ"></a></h1>
-        <div class="pc_h_content">
-            <div class="number">
-                <p class="txt">予約・お問い合わせはこちら</p>
-                <p class="txt">048-666-8956</p>
+        <div class="pc_header_content">
+            <h1><a href="#"><img src="./images/logo.png" alt="ロゴ"></a></h1>
+            <div class="pc_h_content">
+                <div class="number">
+                    <p class="number_txt">予約・お問い合わせはこちら</p>
+                    <p class="number_txt">048-666-8956</p>
+                </div>
+                <p class="event_btn"><a href="#event">イベントカレンダー</a></p>
             </div>
-            <p class="event_btn"><a href="#event">イベントカレンダー</a></p>
         </div>
     </header>
 
@@ -110,7 +115,11 @@
         </div>
     </header>
     <div class="photo_bg">
-        <p class="logo_white"><img src="./images/white.png" alt="ロゴ"></p>
+        <p class="logo_white"><img src="./images/logo_w.svg" alt="ロゴ"></p>
+        <div class="scrollDown pc">
+            <p>Scroll down</p>
+            <div class="scrolldown_line"></div>
+        </div>
     </div>
     <section class="section1">
         <div class="pc_flex">
@@ -157,8 +166,11 @@
         </div>
 
         <div id="calendar"></div>
-        <p class="calendar_vac">定休日　(日曜日、月曜日)</p>
-        <div class="s2event_btn">
+        <div class="miniBox_vac">
+            <div class="miniBox"></div>
+            <p >定休日(日曜日・月曜日)</p>
+        </div>
+        <div class="s2event_btn sp">
             <p class="event_btn"><a href="tel:048-666-8956">予約：048-666-8956</a></p>
         </div>
     </section>
@@ -189,11 +201,11 @@
                 </div>
                 <div class="info_txt">
                     <h2>定休日</h2>
-                    <p class="txt">日曜日、月曜日</p>
+                    <p class="txt">日曜日・月曜日</p>
                 </div>
                 <div class="info_txt">
                     <h2>電話番号</h2>
-                    <p class="txt">048 - 666 - 8956</p>
+                    <p class="txt">048-666-8956</p>
                 </div>
                 <div class="info_txt">
                     <h2>お支払い方法</h2>
@@ -227,19 +239,24 @@
                 <p class="s4_illust"><img src="./images/w_illust.png" alt="似顔絵のイラスト"></p>
             </div>
         </div>
+        <div class="pageTop pc">
+            <div class="pagetop_line"></div>
+            <p><a href="#">Page top</a></p>
+        </div>
     </section>
     <footer>
         <div class="pc_footer">
-            <div class="footer_flex">
+            <div class="footer_flex sp">
+                <p class="footer_img"><img src="./images/logo.png" alt="ロゴ"></p>
+                <p class="footer_ico"><a href="https://www.instagram.com/my_way.405?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="./images/ico_insta.png" alt="インスタアイコン"></a></p>
+            </div>
+            <div class="pc_footer_flex pc">
                 <p class="footer_img"><img src="./images/logo.png" alt="ロゴ"></p>
                 <p class="footer_ico"><a href="https://www.instagram.com/my_way.405?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="./images/ico_insta.png" alt="インスタアイコン"></a></p>
             </div>
             <p><small>&copy;2026 mayway</small></p>
         </div>
     </footer>
-
-
-
 
     <script>
     $(".slider").slick({
@@ -276,6 +293,18 @@
             }
         }]
     })
+    </script>
+    <script>
+        window.addEventListener('scroll' , function() {
+            const scrollDown = document.querySelector('.scrollDown');
+            const threshold = 550;
+
+            if (window.scrollY > threshold) {
+                scrollDown.classList.add('is-hidden');
+            } else{
+                scrollDown.classList.remove('is-hidden');
+            }
+        });
     </script>
 </body>
 </html>
