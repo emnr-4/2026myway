@@ -228,6 +228,7 @@ body{
     position: absolute;
     top: 240px;
     width: 100%;
+    max-width: 500px;
 }
 .logo_white img{
     display: block;
@@ -389,10 +390,13 @@ td.fc-day-mon{
     background-color: #727272;
     padding: 64px 20px;
 }
+.shop_img{
+    max-width: 500px;
+    margin: 0 auto;
+}
 .section3 img{
     display: block;
     width: 100%;
-    max-width: 500px;
 }
 .info{
     display: flex;
@@ -476,6 +480,14 @@ small{
     font-size: 1.2rem;
     color: #B7B7B7;
 }
+/* 中途半端なデバイス/////////////////////////// */
+@media screen and (min-width:700px){
+    .section1,
+    .section3,
+    .section4{
+        padding-inline: 80px;
+    }
+}
 
 /* pc表記///////////////////////////////////// */
 @media screen and (min-width:1040px){
@@ -492,17 +504,6 @@ small{
         display: block;
         height: 45px;
     }
-    /* .pc_header{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 16px 150px;
-        background-color: rgba(64, 64, 64, 0.3);
-        position: fixed;
-        z-index: 100;
-        width: 100%;
-        box-sizing: border-box;
-    } */
     .pc_header{
         background-color: rgba(64, 64, 64, 0.3);
         width: 100%;
