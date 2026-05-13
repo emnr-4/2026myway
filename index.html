@@ -122,7 +122,7 @@
         </div>
     </div>
     <section class="section1">
-        <div class="pc_flex">
+        <div class="pc_flex inview fadeIn_up">
             <p><img src="./images/mayway1.png" alt="外観の写真"></p>
             <div class="point_txt">
                 <h2>カラオケ喫茶 <br class="sp"> 舞WAY（マイウェイ）</h2>
@@ -130,7 +130,7 @@
             </div>
         </div>
 
-        <div class="point pc_flex">
+        <div class="point pc_flex inview fadeIn_up">
             <div class="point_txt">
                 <h3>Point1</h3>
                 <p class="sp"><img src="./images/point1.png" alt="イベントの様子"></p>
@@ -139,7 +139,7 @@
             </div>
             <p class="pc"><img src="./images/point1.png" alt="イベントの様子"></p>
         </div>
-        <div class="point pc_flex">
+        <div class="point pc_flex inview fadeIn_up">
             <div class="point_txt">
                 <h3>Point2</h3>
                 <p class="sp"><img src="./images/point2.png" alt="店内の写真"></p>
@@ -159,7 +159,7 @@
             <div><img src="./images/slider_img6.png" alt="店内の写真"></div>
         </div>
 
-    <section class="section2">
+    <section class="section2 inview fadeIn_up">
         <div class="section_title">
             <p class="sub-title">EVENT CALENDER</p>
             <h2 id="event" class="title">イベントカレンダー</h2>
@@ -182,7 +182,7 @@
         </div>
         <div class="pc_flex">
             <p class="shop_img"><img src="./images/mayway1.png" alt="外観の写真"></p>
-            <div class="info point_txt">
+            <div class="info point_txt inview fadeIn_right">
                 <div class="info_txt">
                     <h2>住所</h2>
                     <p class="txt">埼玉県さいたま市北区1丁目12-1</p>
@@ -226,7 +226,7 @@
             </div>
         </div>
     </section>
-    <section class="section4">
+    <section class="section4 inview fadeIn_up">
         <div class="section_title">
             <p class="sub-title">MESSAGE</p>
             <h2 id="message" class="title">メッセージ</h2>
@@ -258,6 +258,7 @@
         </div>
     </footer>
 
+    <!-- slick-slider -->
     <script>
     $(".slider").slick({
         autoplay:true,
@@ -294,6 +295,8 @@
         }]
     })
     </script>
+
+    <!-- scrollDown_PgeTop -->
     <script>
         window.addEventListener('scroll' , function() {
             const scrollDown = document.querySelector('.scrollDown');
@@ -304,6 +307,20 @@
             } else{
                 scrollDown.classList.remove('is-hidden');
             }
+        });
+    </script>
+
+    <!-- fadeIn -->
+    <script type="text/javascript" src="./plugIn/jquery/jquery-4.0.0.js"></script>
+    <script type="text/javascript" src="./plugIn/inview_fadein/jquery.inview.min.js"></script>
+
+    <script>
+        $(function(){
+        $(".inview").on("inview", function (event, isInView) {
+            if (isInView) {
+            $(this).stop().addClass("is-show");
+            }
+        });
         });
     </script>
 </body>
