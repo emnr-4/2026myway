@@ -51,6 +51,23 @@ body{
     color: #fff;
     font-weight: 300;
 }
+/* fadeIn */
+.fadeIn_up {
+  opacity: 0;
+  transform: translate(0, 10%);
+  transition: 1s;
+}
+.fadeIn_up.is-show,
+.fadeIn_right.is-show {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.fadeIn_right{
+    opacity: 0;
+    transform: translate(8%, 0);
+    transition: 1.5s;
+}
+
 /* sp表記///////////////////////////////////// */
 .sp_header{
     display: flex;
